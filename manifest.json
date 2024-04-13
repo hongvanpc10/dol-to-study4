@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "DOL to STUDY4",
+	"version": "0.0.0",
+	"description": "Copy vocabulary list from DOL and paste to table in STUDY4",
+	"author": "Hong Van",
+	"icons": {
+		"16": "images/icon-16.png",
+		"32": "images/icon-32.png",
+		"48": "images/icon-48.png",
+		"128": "images/icon-128.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["content.js"],
+			"css": ["style.css"],
+			"matches": ["https://tuhocielts.dolenglish.vn/*"]
+		}
+	]
+}
