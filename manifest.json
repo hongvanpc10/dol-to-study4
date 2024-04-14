@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "DOL to STUDY4",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Copy vocabulary list from DOL and paste to table in STUDY4",
 	"author": "Hong Van",
 	"icons": {
@@ -10,11 +10,28 @@
 		"48": "images/icon-48.png",
 		"128": "images/icon-128.png"
 	},
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "images/icon-16.png",
+			"32": "images/icon-32.png",
+			"48": "images/icon-48.png",
+			"128": "images/icon-128.png"
+		},
+		"badge": {
+			"color": "#f00",
+			"background_color": "#0f0",
+			"title": "DOL to STUDY4"
+		},
+		"default_title": "DOL to STUDY4"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
 	"content_scripts": [
 		{
-			"js": ["content.js"],
-			"css": ["style.css"],
-			"matches": ["https://tuhocielts.dolenglish.vn/*"]
+			"matches": ["https://tuhocielts.dolenglish.vn/luyen-thi-ielts/*"],
+			"js": ["content.js"]
 		}
 	]
 }

@@ -1,0 +1,30 @@
+#root {
+	width: 300px;
+	padding: 8px;
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+}
+
+.truncate {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+}
+
+#output {
+	width: 100%;
+	margin-top: 8px;
+}
+
+#copy {
+	margin-top: 8px;
+}
