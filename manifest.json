@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "DOL to STUDY4",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Copy vocabulary list from DOL and paste to table in STUDY4",
 	"author": "Hong Van",
 	"icons": {

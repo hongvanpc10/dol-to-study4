@@ -28,7 +28,11 @@ window.addEventListener('DOMContentLoaded', () => {
 					copyButton.id = 'copy'
 					copyButton.textContent = 'Copy'
 
+					const wordsCount = document.createElement('p')
+					wordsCount.id = 'words-count'
+
 					root.appendChild(selections)
+					root.appendChild(wordsCount)
 					root.appendChild(output)
 					root.appendChild(copyButton)
 
@@ -37,13 +41,25 @@ window.addEventListener('DOMContentLoaded', () => {
 							<div class="checkbox">
 								<input id="${section}" type="checkbox" checked="true">
 								<label for="flexCheckChecked" class="truncate" for="${section}">
-								${section}
+								${section} <small>(${data[section].length})</small>
 								</label>
 							</div>
 						`
 					}
 
 					const selectedSections = Object.keys(data).map(() => true)
+
+					wordsCount.textContent = `Total words: ${Object.keys(
+						data
+					).reduce(
+						(prev, curr, i) =>
+							prev +
+							(selectedSections[i] ? data[curr].length : 0),
+						0
+					)}/${Object.values(data).reduce(
+						(acc, val) => acc + val.length,
+						0
+					)}`
 
 					output.value = transform(selectedSections)
 
@@ -80,6 +96,19 @@ window.addEventListener('DOMContentLoaded', () => {
 								selectedSections[index] = false
 							}
 							output.value = transform(selectedSections)
+							wordsCount.textContent = `Total words: ${Object.keys(
+								data
+							).reduce(
+								(prev, curr, i) =>
+									prev +
+									(selectedSections[i]
+										? data[curr].length
+										: 0),
+								0
+							)}/${Object.values(data).reduce(
+								(acc, val) => acc + val.length,
+								0
+							)}`
 						})
 					})
 
